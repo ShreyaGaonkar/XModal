@@ -29,10 +29,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="modal">
+      
         <h1>User Details Modal</h1>
         <button onClick={clickHandler}>Open Form</button>
         {isOpen && (
+          <div className="modal">
           <div className="modal-content" onClick={closeHandler}>
             <form onSubmit={submitHandler}>
               <h2>Fill Details</h2>
@@ -57,8 +58,9 @@ function App() {
               </button>
             </form>
           </div>
+          </div>
         )}
-      </div>
+      
     </div>
   );
 }
