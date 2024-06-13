@@ -10,7 +10,7 @@ const ModalForm = ({ isOpen, onClose }) => {
 
   const handleOutsideClick = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
-      onClose();
+      onClose(); // Close the modal if clicked outside
     }
   };
 
@@ -28,7 +28,7 @@ const ModalForm = ({ isOpen, onClose }) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen, onClose, handleOutsideClick]);
+  }, [isOpen, onClose]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
