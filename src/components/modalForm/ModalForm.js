@@ -58,7 +58,7 @@ const ModalForm = ({ isOpen, onClose }) => {
     }
 
     // If all validations pass
-    //alert('Form submitted successfully!');
+    // alert('Form submitted successfully!');
     // Additional logic to handle form submission (e.g., API call, state update)
     // Reset form fields
     setUsername('');
