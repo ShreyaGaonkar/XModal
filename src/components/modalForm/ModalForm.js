@@ -15,20 +15,16 @@ const ModalForm = ({ isOpen, onClose }) => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      handleOutsideClick(e);
-    };
-
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleOutsideClick);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleOutsideClick);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,6 +62,10 @@ const ModalForm = ({ isOpen, onClose }) => {
     setPhone('');
     setDob('');
   };
+
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
